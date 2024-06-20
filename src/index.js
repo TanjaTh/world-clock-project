@@ -22,6 +22,19 @@ function updateTime() {
     romeDateElement.innerHTML = romeTime.format("MMMM	Do YYYY");
     romeTimeElement.innerHTML = romeTime.format("h:mm:ss [<small>]A[</small>]");
   }
+
+  // Paris
+  let parisElement = document.querySelector("#paris");
+  if (parisElement) {
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
+    let parisTime = moment().tz("Europe/Paris");
+
+    parisDateElement.innerHTML = parisTime.format("MMMM	Do YYYY");
+    parisTimeElement.innerHTML = parisTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
